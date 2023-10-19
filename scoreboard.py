@@ -1,14 +1,14 @@
 from turtle import Turtle, Screen
 
 ALIGNMENT = 'center'
-FONT = ('Arial', 20, 'normal')
+FONT = ('Courier', 20, 'bold')
 
 
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
-        self.pencolor('white')
+        self.pencolor('#004000')
         self.current_score = 0
         self.penup()
         self.goto(0, 260)
@@ -21,3 +21,9 @@ class Scoreboard(Turtle):
         self.clear()
         self.current_score += 1
         self.generate_scoreboard()
+
+    def final_score(self):
+        self.clear()
+        self.goto(0, 0)
+        self.write(f"Game Over!!\n\n", move=False, align=ALIGNMENT, font=FONT)
+        self.write(f" Final Score: {self.current_score}", move=False, align='center', font=FONT)
