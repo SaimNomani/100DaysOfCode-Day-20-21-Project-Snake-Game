@@ -28,6 +28,8 @@ class Snake:
             new_y = self.snake_segments[segment - 1].ycor()
             self.snake_segments[segment].goto(new_x, new_y)
         self.head_of_snake.forward(SNAKE_MOVE_DIST)
+    def get_head_of_snake(self):
+        return self.head_of_snake
 
     def move_up(self):
         if self.head_of_snake.heading() != DOWN:
